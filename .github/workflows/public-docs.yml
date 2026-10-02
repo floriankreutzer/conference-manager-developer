@@ -1,0 +1,74 @@
+name: Public documentation safety
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  public-surface:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Reject sensitive file types and obvious private material
+        shell: bash
+        run: |
+          set -euo pipefail
+          if find . -type f \( -name '*.pem' -o -name '*.key' -o -name '*.p12' -o -name '*.pfx' -o -name '.env' -o -name '.env.*' \) -print -quit | grep -q .; then
+            echo 'Sensitive file type detected.'
+            exit 1
+          fi
+          if grep -RInE --exclude-dir=.git --exclude='public-docs.yml' '(BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY|postgres(ql)?://[^[:space:]]+:[^[:space:]]+@|Authorization:[[:space:]]*Bearer[[:space:]]+[A-Za-z0-9._~+/-]{16,})' .; then
+            echo 'Potential credential/private material detected.'
+            exit 1
+          fi
+
+      - name: Enforce OpenAPI publication provenance
+        shell: bash
+        run: |
+          set -euo pipefail
+          shopt -s nullglob globstar
+          specs=(openapi/**/*.yaml openapi/**/*.yml openapi/**/*.json)
+          for spec in "${specs[@]}"; do
+            grep -Eq '^x-conference-manager-source-commit:' "$spec" || {
+              echo "$spec is missing x-conference-manager-source-commit"
+              exit 1
+            }
+            grep -Eq '^x-conference-manager-contract-version:' "$spec" || {
+              echo "$spec is missing x-conference-manager-contract-version"
+              exit 1
+            }
+          done
+
+      - name: Check repository-local Markdown links
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 - <<'PY'
+          from pathlib import Path
+          import re, sys
+          errors=[]
+          for p in Path('.').rglob('*.md'):
+              if '.git' in p.parts:
+                  continue
+              text=p.read_text(encoding='utf-8')
+              for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)', text):
+                  if target.startswith(('http://','https://','mailto:','#')):
+                      continue
+                  clean=target.split('#',1)[0]
+                  if not clean:
+                      continue
+                  dest=(p.parent/clean).resolve()
+                  if not dest.exists():
+                      errors.append(f'{p}: missing local link {target}')
+          if errors:
+              print('\n'.join(errors))
+              sys.exit(1)
+          PY

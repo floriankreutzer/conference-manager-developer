@@ -37,6 +37,14 @@ Never commit:
 
 Use synthetic examples only. Redact identifiers where necessary. Public examples must not imply that example credentials or endpoints are live.
 
+## Public-by-necessity rule
+
+Before adding any information, apply this test: **does an external integrator need this information to implement, authenticate, validate, troubleshoot, migrate, or safely operate the documented public API?** If not, do not publish it here.
+
+Do not publish internal architecture diagrams, provider/vendor discovery, roadmap or milestone details, internal issue numbers, internal release gates, internal role/governance discussions, infrastructure topology, database/storage design, internal monitoring/operations procedures, internal security-control implementation, vulnerability details, or repository-to-repository implementation notes unless a narrowly scoped part is strictly required for correct public API use.
+
+Describe externally observable behavior and obligations, not internal implementation. Security documentation must tell integrators what they must do without exposing defensive internals that are unnecessary for integration.
+
 ## API documentation rules
 
 - Public documentation must describe only released or explicitly marked preview contracts.
