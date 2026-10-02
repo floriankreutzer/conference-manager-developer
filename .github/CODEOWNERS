@@ -1,0 +1,7 @@
+# Public developer documentation repository
+* @floriankreutzer
+
+# Published API contracts require explicit owner review.
+/openapi/ @floriankreutzer
+/.github/ @floriankreutzer
+/AGENTS.md @floriankreutzer
