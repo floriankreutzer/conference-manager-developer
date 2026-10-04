@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This public repository is the approved external integration-documentation surface for Conference Manager. SaaS 3.9 formalizes this boundary; it does not make this repository an authority for backend implementation.
+This public repository is the approved external integration-documentation surface for Conference Manager. It does not make this repository an authority for backend implementation.
 
 ## Source of truth
 
@@ -33,12 +33,12 @@ Do not independently edit a published OpenAPI contract in a way that creates a s
 
 ## Publication controls
 
-SaaS 3.9 #250 must provide a deterministic, fail-closed publication mechanism. Public artifacts must be allowlisted, validated, secret-scanned, versioned and source-traceable. Sanitization or validation failure must stop publication rather than publish a partial or broader contract.
+Publication uses a deterministic, fail-closed mechanism and a reviewable pull request. Public artifacts must be allowlisted, validated, secret-scanned, versioned and source-traceable. Sanitization or validation failure must stop publication rather than publish a partial or broader contract.
 
 Examples must use synthetic data only.
 
-## SaaS 4 relationship
+## Release boundary
 
-SaaS 4 #236 defines the generic Caterer API. SaaS 4 #237 owns complete external documentation for that API. This repository publishes those artifacts only after the owning functional/release gates approve them.
+No production Caterer API specification is published yet. Publish an artifact only after the canonical backend contract and external release content are approved. Do not publish a placeholder contract to exercise the publication pipeline.
 
-No placeholder production API is to be published merely to exercise the publication pipeline.
+Internal milestone, issue, provider-research and release-gate details belong in private governance sources.
