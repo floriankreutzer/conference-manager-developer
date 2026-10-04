@@ -1,8 +1,8 @@
 # Conference Manager Developer
 
-## SaaS 3.9 publication governance
+## Publication governance
 
-SaaS 3.9 formalizes this repository as the intentionally public Developer Portal while the trusted backend and canonical API-contract source remain private. Public artifacts must be approved, source-traceable and fail-closed against accidental private-content publication. See `docs/PUBLICATION-GOVERNANCE.md`.
+This repository is the intentionally public Developer Portal. Approved artifacts must be source-traceable and validated before publication. See [publication governance](docs/PUBLICATION-GOVERNANCE.md).
 
 Public documentation for integrating with released Conference Manager partner APIs.
 

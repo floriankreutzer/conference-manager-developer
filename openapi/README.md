@@ -13,4 +13,4 @@ Published specifications here must:
 3. pass publication validation and drift checks;
 4. never be manually changed to create a contract the backend does not implement.
 
-The planned Caterer API artifact will be published under `catering/v1/openapi.yaml` after the SaaS 4 contract is approved. No placeholder API specification is committed here.
+The planned Caterer API artifact will be published under `catering/v1/openapi.yaml` after the corresponding backend contract and public release are approved. No placeholder API specification is committed here.
