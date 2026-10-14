@@ -4,7 +4,7 @@ This directory contains public, release-bound copies of approved Conference Mana
 
 ## Source of truth
 
-The canonical source contract and implementation live in the private trusted backend repository `floriankreutzer/conference-manager-api`.
+The canonical source contract and implementation live in the trusted backend repository `floriankreutzer/conference-manager-api`.
 
 Published specifications here must:
 
