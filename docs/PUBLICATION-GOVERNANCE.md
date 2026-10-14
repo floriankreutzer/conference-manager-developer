@@ -6,7 +6,7 @@ This public repository is the approved external integration-documentation surfac
 
 ## Source of truth
 
-`conference-manager-api` is private and owns canonical API contracts. Released public specifications in this repository are derived publication artifacts and must be traceable to an immutable backend source commit.
+`conference-manager-api` owns canonical API contracts. Released public specifications in this repository are derived publication artifacts and must be traceable to an immutable backend source commit.
 
 Do not independently edit a published OpenAPI contract in a way that creates a second source of truth.
 
