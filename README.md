@@ -1,47 +1,42 @@
 # Conference Manager Developer
 
-## Publication governance
+Public documentation for approved Conference Manager partner integrations.
 
-This repository is the intentionally public Developer Portal. Approved artifacts must be source-traceable and validated before publication. See [publication governance](docs/PUBLICATION-GOVERNANCE.md).
+**Current status:** No production Caterer API contract is published in this repository. Do not infer API availability from the documentation structure.
 
-Public documentation for integrating with released Conference Manager partner APIs.
+## Contents
 
-> **Status:** No production Caterer API is published yet.
+- Public integration guides in [`docs/`](docs/README.md).
+- Approved API specifications in [`openapi/`](openapi/README.md), when released.
+- Synthetic examples in [`examples/`](examples/README.md).
+- Public version and compatibility information in [CHANGELOG.md](CHANGELOG.md).
 
-## Public scope
+Published specifications must identify their approved source commit and contract version. This repository distributes approved contracts; it does not independently define backend behavior.
 
-This repository intentionally contains only information an external integrator needs to implement and operate an approved integration:
+## Read the documentation
 
-- released API specifications;
-- authentication and onboarding instructions;
-- request/response and lifecycle guidance required to use the API correctly;
-- synthetic examples;
-- version, compatibility, deprecation, and public changelog information;
-- integration-specific security requirements.
+The static documentation entry point is `index.html`. You can inspect it locally without application credentials:
 
-It intentionally excludes internal architecture, provider research, product roadmaps, internal release gates, customer/Tenant information, operational topology, internal controls, and implementation details that are not required by an external integrator.
-
-## Contract authority
-
-The trusted backend owns the canonical source API contract. This repository publishes approved release artifacts. Published OpenAPI files are not independently edited API authority.
-
-No placeholder OpenAPI specification is published before an API contract is approved.
-
-## Public access
-
-Documentation is readable without login. API access requires separately provisioned credentials and authorization. No credentials, customer data, production payloads, or internal-only information belong in this repository.
-
-## Planned structure
-
-```text
-docs/
-  getting-started/
-  authentication/
-  catering/v1/
-  security/
-  versioning/
-openapi/
-  catering/v1/
-examples/
-CHANGELOG.md
+```bash
+git clone https://github.com/floriankreutzer/conference-manager-developer.git
+cd conference-manager-developer
+python3 -m http.server 8080 --bind 127.0.0.1
 ```
+
+Open `http://127.0.0.1:8080`. Python 3 is required only for this optional local server. No Node.js build is currently defined.
+
+Reading documentation does not grant API access. Released APIs require separately provisioned credentials and authorization.
+
+## Contributing and validation
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) and [AGENTS.md](AGENTS.md) before contributing. Use synthetic examples and describe released behavior accurately.
+
+The repository's `Public documentation safety` workflow checks repository history for secrets, prohibited private material, API publication provenance and local Markdown links. Changes must pass the applicable checks and review before publication.
+
+## Security
+
+Never publish credentials, real customer payloads or sensitive findings. Report suspected vulnerabilities privately using [SECURITY.md](SECURITY.md).
+
+## License
+
+No project-level license file is currently included. Refer to any corresponding third-party notices.
