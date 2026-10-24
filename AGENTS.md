@@ -94,6 +94,12 @@ Dependencies should be minimal, pinned, and justified. Secret scanning and depen
 
 A change is complete only when its content is accurate for the named release, contains no sensitive data, preserves the source-of-truth boundary, passes applicable validation, and is merged through the repository's normal review process.
 
+## Supplementary design-profile routing
+
+The [Pavurel Application Design profile](https://github.com/floriankreutzer/automatic-engineering-design-skills/blob/1e812a0f0f82cdd2669b5e2d3e5411ea79a5dd1d/skills/pavurel-app-design/SKILL.md) and [Pavurel Web Design profile](https://github.com/floriankreutzer/automatic-engineering-design-skills/blob/1e812a0f0f82cdd2669b5e2d3e5411ea79a5dd1d/skills/pavurel-web-design/SKILL.md) in [skills PR #1](https://github.com/floriankreutzer/automatic-engineering-design-skills/pull/1) are optional review candidates for application and marketing-site work in their owning repositories. Their current acceptance state is recorded in that PR. They are not developer-portal or API-contract standards and are not installed by these references.
+
+This repository's current instructions and publication governance remain authoritative for its public documentation and release-bound artifacts. Do not apply UI/marketing defaults to published API semantics, manually alter a derived contract to match a profile, or infer that an unpublished API is available. If a task actually belongs to an application or marketing surface, follow that repository's current instructions and relevant profile there. Keep this repository's existing public-content and provenance boundaries unchanged.
+
 ## Cost-constrained execution
 
 Work must remain within the owner's configured zero-additional-spend limits. Do not upgrade plans, increase paid quotas, change spending limits, or start billable runners or deployments without an explicit new owner decision. Prefer local validation, bundle related documentation changes, and avoid unnecessary workflow reruns and Hosted Demo traffic. Configured cost controls do not provide additional included capacity.
