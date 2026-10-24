@@ -4,7 +4,7 @@ These instructions are mandatory for every human contributor and AI coding agent
 
 ## Purpose and authority
 
-This public repository owns the externally readable Conference Manager developer documentation and published API artifacts. It is documentation and publication infrastructure only. It does not own runtime business rules, authorization, Tenant authority, provider credentials, or the canonical executable API contract.
+This public repository owns the externally readable Conference Manager developer documentation and published API artifacts. It is documentation and publication infrastructure only. This repository's current instructions and release-bound publication sources take precedence over supplementary authoring or design skills. It does not own runtime business rules, authorization, Tenant authority, provider credentials, or the canonical executable API contract.
 
 For the Catering API and future public partner APIs:
 
