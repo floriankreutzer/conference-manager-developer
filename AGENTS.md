@@ -4,7 +4,7 @@ These instructions are mandatory for every human contributor and AI coding agent
 
 ## Purpose and authority
 
-This public repository owns the externally readable Conference Manager developer documentation and published API artifacts. It is documentation and publication infrastructure only. This repository's current instructions and release-bound publication sources take precedence over supplementary authoring or design skills. It does not own runtime business rules, authorization, Tenant authority, provider credentials, or the canonical executable API contract.
+This public repository owns the externally readable Conference Manager developer documentation and published API artifacts. It is documentation and publication infrastructure only. This repository's current instructions and release-bound publication sources take precedence over authoring or design skills. It does not own runtime business rules, authorization, Tenant authority, provider credentials, or the canonical executable API contract.
 
 For the Catering API and future public partner APIs:
 
@@ -74,6 +74,14 @@ It must not contain:
 - production secrets/configuration;
 - customer application runtime code;
 - a second manually maintained canonical API schema.
+
+## Required design-skill routing for portal UI work
+
+For authorized developer-portal UI design, layout/navigation planning, implementation and review, apply the [mandatory design-skill policy](https://github.com/floriankreutzer/automatic-engineering-design-skills/blob/3f7f7bcd7dc5949b9867119a353d480eb87f9f71/SKILL_POLICY.md) from the accepted source at `3f7f7bc`. Assess the complete central catalog by its actual triggers, read and apply every applicable skill, and record Applied, Not applicable with a concrete reason, or Blocked. Missing sources or tools do not make an applicable skill optional or complete its gate. Keep the catalog central rather than copying it here.
+
+This portal is a developer-documentation surface. Do not assume the Pavurel marketing-website or Customer/Platform application profile applies merely because it is web-based. API specifications, release provenance, technical prose and examples do not acquire unrelated visual-design work. The current publication rules, released API contract, public-by-necessity boundary and static portal architecture remain authoritative.
+
+Use installed skills or source files from the reviewed release above; review any different source against current repository requirements and record its exact ref before adoption. These references do not authorize installations, dependencies, new API claims, publication or deployment.
 
 ## Quality and security
 
